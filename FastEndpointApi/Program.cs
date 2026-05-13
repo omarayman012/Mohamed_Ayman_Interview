@@ -1,8 +1,8 @@
-using FastEndpointApi.services;
 using FastEndpoints;
 using FastEndpoints.ClientGen.Kiota;
 using FastEndpoints.Swagger;
 using Kiota.Builder;
+using FastEndpointApi.Infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddFastEndpoints();
@@ -15,8 +15,7 @@ builder.Services.SwaggerDocument(o =>
         s.DocumentName = "v1"; //must match what's being passed in to the map method below
     };
 });
-builder.Services.AddSingleton<IPersonService, PersonService>();
-
+builder.Services.AddInfrastructure();
 var app = builder.Build();
 
 if (app.Environment.IsDevelopment())

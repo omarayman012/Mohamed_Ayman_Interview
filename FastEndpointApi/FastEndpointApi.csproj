@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Web">
   <PropertyGroup>
-    <TargetFramework>net10.0</TargetFramework>
-    <Nullable>enable</Nullable>
+	  <TargetFramework>net8.0</TargetFramework>
+	  <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
   </PropertyGroup>
@@ -15,5 +15,9 @@
     <PackageReference Include="FastEndpoints.Swagger" Version="8.1.0" />
     <PackageReference Include="FastEndpoints.ClientGen.Kiota" Version="8.1.0" />
     <PackageReference Include="Microsoft.Kiota.Abstractions" Version="1.22.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FastEndpointApi.Application\FastEndpointApi.Application.csproj" />
+    <ProjectReference Include="..\FastEndpointApi.Infrastructure\FastEndpointApi.Infrastructure.csproj" />
   </ItemGroup>
 </Project>
